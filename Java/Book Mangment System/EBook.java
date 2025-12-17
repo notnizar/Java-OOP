@@ -1,7 +1,8 @@
-public class EBook extends Book{
-     private double fileSizeMB;
+public class EBook extends Book {
 
-    public EBook(String title, String author, Double price) {
+    private double fileSizeMB;
+
+    public EBook(String title, String author, Double price, Double fileSizeMB) {
         super(title, author, price);
         this.fileSizeMB = fileSizeMB;
     }
@@ -13,6 +14,10 @@ public class EBook extends Book{
     public void setFileSizeMB(double fileSizeMB) {
         this.fileSizeMB = fileSizeMB;
     }
-     
-     
+
+    @Override
+    public String toString() {
+        return "EBook{" + super.toString() + " " + "fileSizeMB=" + fileSizeMB + '}';
+    }
+
 }

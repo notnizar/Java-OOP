@@ -1,24 +1,82 @@
+import java.util.Scanner;
+
 public class Test {
 
     public static void main(String[] args) {
-        Library myLibrary = new Library(5);
+        Scanner scanner = new Scanner(System.in);
+        Library myLibrary = new Library(10);
 
-        Book b1 = new Book("Java 101", "Nizar", 20.0);
-        Book b2 = new Book("Python 101", "Sara", 35.5);
+        while (true) {
+            System.out.println("\n--- Library Menu ---");
+            System.out.println("1. Add Book");
+            System.out.println("2. Search Book");
+            System.out.println("3. Remove Book");
+            System.out.println("4. Exit");
+            System.out.print("Choose an option: ");
 
-        myLibrary.addBook(b1);
-        myLibrary.addBook(b2);
+            int choice = scanner.nextInt();
+            scanner.nextLine();
 
-        Book found = myLibrary.searchByTitle("Java 101");
-        if (found != null) {
-            System.out.println("Found: " + found);
+            switch (choice) {
+                case 1 -> AddBook_menu(scanner, myLibrary);
+
+                case 2 -> SearchBook_menu(scanner, myLibrary);
+
+                case 3 -> {
+                    System.out.print("Enter Title to Remove: ");
+                    String removeTitle = scanner.nextLine();
+
+                    myLibrary.removeBook(removeTitle);
+                }
+
+                case 4 -> {
+                    System.out.println("Goodbye!");
+                    return;
+                }
+
+                default -> System.out.println("Invalid option! Try again.");
+            }
         }
+    }
 
-        myLibrary.removeBook("Java 101");
+    private static void SearchBook_menu(Scanner scanner, Library myLibrary) {
+        System.out.print("Enter Title to Search: ");
+        String searchTitle = scanner.nextLine();
 
-        Book found2 = myLibrary.searchByTitle("Java 101");
+        Book found = myLibrary.searchByTitle(searchTitle);
         if (found != null) {
-            System.out.println("Found: " + found2);
+            System.out.println("The Book Founded: " + found);
+            if(found instanceof EBook){
+                EBook ebook =  (EBook) found;
+                System.out.println(ebook.getFileSizeMB());
+            }else{
+                System.out.println("Its a pysical book");
+            }
+        } else {
+            System.out.println("Book Not Founded");
+        }
+    }
+
+    private static void AddBook_menu(Scanner scanner, Library myLibrary) {
+        System.out.print("Enter Title: ");
+        String title = scanner.nextLine();
+        System.out.print("Enter Author: ");
+        String author = scanner.nextLine();
+        System.out.print("Enter Price: ");
+        double price = scanner.nextDouble();
+
+        System.out.println("1-EBook");
+        System.out.println("2-Paper Book");
+        int e_p = scanner.nextInt();
+
+        if (e_p == 1) {
+            System.out.println("Enter File Size: ");
+            double fileSizeMB = scanner.nextDouble();
+            EBook e1 = new EBook(title, author, price, fileSizeMB);
+            myLibrary.addBook(e1);
+        } else if (e_p == 2) {
+            Book b1 = new Book(title, author, price);
+            myLibrary.addBook(b1);
         }
     }
 }
