@@ -37,8 +37,8 @@ Below is the roadmap I follow, along with a checklist of concepts I have impleme
 
 ### Phase 5: Polymorphism 🎭
 *(Flexibility and multiple forms)*
-- [ ] **Method Overloading:** Static Polymorphism (Compile-time).
-- [ ] **Method Overriding:** Dynamic Polymorphism (Runtime).
+- [X] **Method Overloading:** Static Polymorphism (Compile-time).
+- [X] **Method Overriding:** Dynamic Polymorphism (Runtime).
 - [ ] **Upcasting & Downcasting:** Flexible type handling.
 
 ### Phase 6: The Architect 🏛️
