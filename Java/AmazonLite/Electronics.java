@@ -11,7 +11,7 @@ public class Electronics extends Product implements Taxable {
     
     @Override
     public double getTax(double price) {
-     return getTax(getPrice());
+     return price * 0.15;
     }
 
     @Override

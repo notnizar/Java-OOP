@@ -1,12 +1,13 @@
+
 public class Author {
     private String authName;
-    private String authNatiolatly;
+    private String authNationality;
     private String authEmail;
     
     
     public Author(String authName, String authNatiolatly, String authEmail) {
         this.authName = authName;
-        this.authNatiolatly = authNatiolatly;
+        this.authNationality = authNatiolatly;
         this.authEmail = authEmail;
     }
 
@@ -18,13 +19,13 @@ public class Author {
         this.authName = authName;
     }
 
-    public String getAuthNatiolatly() {
-        return authNatiolatly;
+    public String getAuthNationality() {
+        return authNationality;
     }
 
 
-    public void setAuthNatiolatly(String authNatiolatly) {
-        this.authNatiolatly = authNatiolatly;
+    public void setAuthNationality(String authNatiolatly) {
+        this.authNationality = authNatiolatly;
     }
 
     public String getAuthEmail() {
