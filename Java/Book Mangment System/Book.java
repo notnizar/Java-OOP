@@ -1,11 +1,11 @@
 public abstract class Book {
 
     private String title;
-    private String author;
+    private Author author;
     private Double price;
     private static int count;
 
-    public Book(String title, String author, Double price) {
+    public Book(String title, Author author, Double price) {
         this.title = title;
         this.author = author;
         setPrice(price);
@@ -24,11 +24,11 @@ public abstract class Book {
         this.title = title;
     }
 
-    public String getAuthor() {
+    public Author getAuthor() {
         return author;
     }
 
-    public void setAuthor(String author) {
+    public void setAuthor(Author author) {
         this.author = author;
     }
 
