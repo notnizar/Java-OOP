@@ -11,13 +11,7 @@ public class Electronics extends Product implements Taxable {
     
     @Override
     public double getTax(double price) {
-        double currentPrice = getPrice();
-        
-        double takeOFF = currentPrice * (15 / 100);
-        double newPrice = currentPrice - takeOFF;
-        
-        setPrice(newPrice);
-        return newPrice;
+     return getTax(getPrice());
     }
 
     @Override
@@ -31,6 +25,11 @@ public class Electronics extends Product implements Taxable {
 
     public void setBrand(String brand) {
         this.brand = brand;
+    }
+
+    @Override
+    public double calcilateFinalPrice() {
+        return getPrice() * getTax(getPrice());
     }
     
 }

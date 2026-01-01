@@ -20,27 +20,11 @@ public class Order {
         double total = 0.0;
 
         for (int i = 0; i < cart.length; i++) {
-            if (cart[i] != null) {
-                double price = cart[i].getPrice();
-                double tax = 0.0;
-
-                if (cart[i] instanceof Electronics) {
-                    Electronics elect = (Electronics) cart[i];
-                    System.out.println("Item: " + elect.getName() + " (" + elect.getBrand() + ")");
-
-                    tax = elect.getTax(price);
-                } else if (cart[i] instanceof Clothing) {
-                    Clothing cloth = (Clothing) cart[i];
-                    System.out.println("Item: " + cloth.getName() + " (Size: " + cloth.getSize() + ")");
-
-                    tax = cloth.getTax(price);
-                }
-                double itemTotal = price + tax;
-
-                total = total + itemTotal;
-
-                System.out.println("   Price: " + price + " | Tax: " + tax + " | Subtotal: " + itemTotal);
-            }
+          if(cart[i] != null){
+              double finalPrice = cart[i].calcilateFinalPrice();
+              System.out.println("Item: " + cart[i].getName() + "Final Price: " + finalPrice);
+              total += finalPrice;
+          }
         }
         return total;
     }
