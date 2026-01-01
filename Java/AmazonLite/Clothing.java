@@ -26,8 +26,7 @@ public class Clothing extends Product implements Taxable {
     }
     
     public void setSize(String size) {
-        size.toUpperCase();
-        this.size = size;
+        this.size = size.toUpperCase;
     }
     
 }
