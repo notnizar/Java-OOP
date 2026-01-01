@@ -1,5 +1,3 @@
-package com.mycompany.mavenproject1;
-
 public class Library {
 
     private final Book[] books;

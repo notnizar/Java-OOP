@@ -1,10 +1,8 @@
-package com.mycompany.mavenproject1;
-
 public class PaperBook extends Book implements Prometable {
 
     private double weight;
 
-    public PaperBook(String title, String author, Double price, Double weight) {
+    public PaperBook(String title, Author author, Double price, Double weight) {
         super(title, author, price);
         this.weight = weight;
     }

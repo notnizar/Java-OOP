@@ -5,6 +5,7 @@ public class Test {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Library myLibrary = new Library(10);
+        System.out.println("Total Books Created: " + Book.getCount());
 
         while (true) {
             System.out.println("\n--- Library Menu ---");
@@ -18,9 +19,11 @@ public class Test {
             scanner.nextLine();
 
             switch (choice) {
-                case 1 -> AddBook_menu(scanner, myLibrary);
+                case 1 ->
+                    AddBook_menu(scanner, myLibrary);
 
-                case 2 -> SearchBook_menu(scanner, myLibrary);
+                case 2 ->
+                    SearchBook_menu(scanner, myLibrary);
 
                 case 3 -> {
                     System.out.print("Enter Title to Remove: ");
@@ -34,9 +37,12 @@ public class Test {
                     return;
                 }
 
-                default -> System.out.println("Invalid option! Try again.");
+                default ->
+                    System.out.println("Invalid option! Try again.");
             }
+            System.out.println("Total Books Created: " + Book.getCount());
         }
+
     }
 
     private static void SearchBook_menu(Scanner scanner, Library myLibrary) {
@@ -46,10 +52,10 @@ public class Test {
         Book found = myLibrary.searchByTitle(searchTitle);
         if (found != null) {
             System.out.println("The Book Founded: " + found);
-            if(found instanceof EBook){
-                EBook ebook =  (EBook) found;
+            if (found instanceof EBook) {
+                EBook ebook = (EBook) found;
                 System.out.println(ebook.getFileSizeMB());
-            }else{
+            } else {
                 System.out.println("Its a pysical book");
             }
         } else {
@@ -61,7 +67,12 @@ public class Test {
         System.out.print("Enter Title: ");
         String title = scanner.nextLine();
         System.out.print("Enter Author: ");
-        String author = scanner.nextLine();
+        String autherName = scanner.nextLine();
+        System.out.println("Enter Auther Natiolatly");
+        String authNatiolaty = scanner.nextLine();
+        System.out.println("Enter Auther Email");
+        String authEmail = scanner.nextLine();
+        Author author = new Author(autherName, authNatiolaty, authEmail);
         System.out.print("Enter Price: ");
         double price = scanner.nextDouble();
 
@@ -75,7 +86,7 @@ public class Test {
             EBook e1 = new EBook(title, author, price, fileSizeMB);
             myLibrary.addBook(e1);
         } else if (e_p == 2) {
-            Book b1 = new Book(title, author, price);
+            Book b1 = new PaperBook(title, author, price, price);
             myLibrary.addBook(b1);
         }
     }

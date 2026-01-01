@@ -1,5 +1,3 @@
-package com.mycompany.mavenproject1;
-
 public abstract class Book {
 
     private String title;
