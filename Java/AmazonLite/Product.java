@@ -11,6 +11,7 @@ public abstract class Product {
         setPrice(price);
         totlaSold++;
     }
+    public abstract double calculateFinalPrice();
 
     public static int getTotlaSold() {
         return totlaSold;

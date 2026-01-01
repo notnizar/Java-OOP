@@ -21,7 +21,7 @@ public class Order {
 
         for (int i = 0; i < cart.length; i++) {
           if(cart[i] != null){
-              double finalPrice = cart[i].calcilateFinalPrice();
+              double finalPrice = cart[i].calculateFinalPrice();
               System.out.println("Item: " + cart[i].getName() + "Final Price: " + finalPrice);
               total += finalPrice;
           }
