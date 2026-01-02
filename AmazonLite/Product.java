@@ -11,7 +11,6 @@ public abstract class Product {
         setPrice(price);
         totlaSold++;
     }
-    public abstract double calculateFinalPrice();
 
     public static int getTotlaSold() {
         return totlaSold;
@@ -36,5 +35,7 @@ public abstract class Product {
             System.out.println("Inviled Numbers");
         }
     }
+    
+    public abstract double calculateFinalPrice();
 
 }

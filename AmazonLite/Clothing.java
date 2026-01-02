@@ -23,8 +23,8 @@ public class Clothing extends Product implements Taxable {
     }
 
     @Override
-    public double calcilateFinalPrice() {
-        return getPrice() * getTax(getPrice());
+    public double calculateFinalPrice() {
+        return getPrice() * 0.10;
     }
 
 }
