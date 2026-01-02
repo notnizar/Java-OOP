@@ -1,53 +1,49 @@
-# My OOP Mastery Journey 🚀
+# Java OOP Design Portfolio: Business Logic Simulations
 
-This repository documents my journey in mastering Object-Oriented Programming (OOP). I focus on understanding "how things work" (The Physics) rather than just memorizing syntax.
-
-Below is the roadmap I follow, along with a checklist of concepts I have implemented in **Java** and **Python**.
-
-<img width="2153" height="3166" alt="image" src="https://github.com/user-attachments/assets/33b52e67-2617-454d-a3ad-d9413c57568e" />
-
+This repository documents my professional transition from understanding syntax to mastering **Object-Oriented Design**. Instead of focusing on "how code looks," these projects demonstrate **"how systems work"** through scalable architecture and real-world business logic.
 
 ---
 
-## 🧠 What I Have Learned (So Far)
+## 🏗️ Featured Systems
 
-### Phase 1: The Physics ⚙️
-*(Understanding memory infrastructure and object creation)*
-- [X] **Class vs. Object:** The difference between the blueprint and the live instance.
-- [X] **Stack vs. Heap Memory:** Where data lives in memory.
-- [X] **Reference Variables:** How we point to objects.
+### 1. FreelanceFlow (Project & Payment Management)
+A modular system designed to manage diverse billing models for service providers.
+* **Polymorphic Billing:** Implements a `Payable` interface, allowing a single calculation engine to process both `HourlyProject` and `FixedPriceProjects` seamlessly.
+* **Relationship Management:** Utilizes a `User` hierarchy to share core identity data while distinguishing between `Client` and `FreeLancer` behaviors.
+* **Composition:** The `Project` class manages an array of `FreeLancer` objects, demonstrating a "Has-A" relationship over rigid inheritance.
 
-### Phase 2: Birth & State ✨
-*(Object lifecycle and state management)*
-- [X] **Constructors:** How an object is born (Initial State).
-- [X] **The `this` Keyword:** Referencing the current object.
-- [X] **Static vs. Instance:** Shared (Class) data vs. Individual (Object) data.
+### 2. AmazonLite (E-Commerce Tax Engine)
+A checkout simulation focusing on decoupling business rules from data.
+* **Interface-Driven Design:** Uses the `Taxable` interface to isolate tax calculation logic. This allows `Electronics` (15% tax) and `Clothing` (10% tax) to have unique financial behaviors without bloating the parent `Product` class.
+* **Encapsulation & Validation:** Protects data integrity by using controlled setters to prevent invalid states, such as negative pricing or empty product names.
 
-### Phase 3: Security 🛡️
-*(Data protection and access control)*
-- [X] **Access Modifiers:** Controlling visibility (Public, Private, Protected).
-- [X] **Encapsulation:** Hiding complexity and protecting data.
-- [X] **Getters & Setters:** Controlled access to private fields.
+### 3. Library Management System
+A robust inventory handler for physical and digital assets.
+* **Advanced Abstraction:** Leverages `abstract` classes to define a shared blueprint for all books.
+* **Type Safety & Casting:** Uses `instanceof` and downcasting to handle specific sub-type attributes, such as managing `fileSizeMB` for `EBooks` versus `weight` for `PaperBooks`.
 
-### Phase 4: Relationships 🤝
-*(How objects interact with each other)*
-- [X] **Inheritance (IS-A):** Code reusability and hierarchy.
-- [X] **The `super` Keyword:** Accessing parent class members.
-- [X] **Composition (HAS-A):** Building complex objects from simpler ones (The better alternative?).
+---
 
-### Phase 5: Polymorphism 🎭
-*(Flexibility and multiple forms)*
-- [X] **Method Overloading:** Static Polymorphism (Compile-time).
-- [X] **Method Overriding:** Dynamic Polymorphism (Runtime).
-- [X] **Upcasting & Downcasting:** Flexible type handling.
+## 🛠️ Engineering Principles Applied
 
-### Phase 6: The Architect 🏛️
-*(Structure and Abstraction)*
-- [X] **Abstract Classes:** Incomplete blueprints.
-- [X] **Interfaces:** Strict contracts for classes.
-- [ ] **Loose Coupling:** Reducing dependencies between classes.
+* **S.O.L.I.D Principles:** * **Single Responsibility:** Separating tax logic into interfaces.
+    * **Open/Closed Principle:** The system is designed so new product or project types can be added without modifying existing checkout or payment logic.
+* **Memory Management:** Architected with a deep understanding of **Stack vs. Heap** memory—ensuring efficient object referencing and garbage collection awareness.
+* **Abstraction:** Focused on hiding implementation details to reduce system complexity and "loose coupling."
 
-### Phase 7: Professional Design 🚀
-*(Advanced Design Principles)*
-- [ ] **S.O.L.I.D Principles:** The 5 rules of clean OOP design.
-- [ ] **Design Patterns:** Standard solutions to common problems.
+---
+
+## 🧠 Technical Deep Dives (Documentation)
+For detailed notes on the underlying "Physics" of Java used in these projects, see my internal documentation:
+* [Class vs. Object Foundations](./General-Notes/Foundations/Class%20vs%20Object.md)
+* [Memory: Stack & Heap Analysis](./General-Notes/Foundations/Memory%20Stack%20&%20Heap.md)
+* [The Power of Reference Variables](./General-Notes/Foundations/Reference%20Variables.md)
+
+---
+
+## 💻 Tech Stack
+* **Language:** Java (JDK 17+)
+* **Concepts:** Inheritance, Runtime Polymorphism, Interface-driven design, Data Encapsulation, Abstract Data Types.
+
+---
+*Developed as part of an ongoing journey toward mastering Clean Code and System Design.*
