@@ -1,5 +1,6 @@
-
 package com.mycompany.freelanceflow;
+
+
 
 public class FreeLancer extends User{
     private String skills[];
@@ -31,7 +32,7 @@ public class FreeLancer extends User{
 
     @Override
     public void getProfile() {
-        System.out.println("I am a freelacer with this skills: " + skills);
+        System.out.println("I am a freelacer with this skills:") ;
         System.out.println("My hourly Rate: " + hourlyRate);
     }
 

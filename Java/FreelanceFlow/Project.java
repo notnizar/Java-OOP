@@ -1,10 +1,7 @@
 package com.mycompany.freelanceflow;
 
-import java.util.Scanner;
-
 public class Project {
 
-    Scanner scanner = new Scanner(System.in);
 
     private String projectTitle;
     private Client client;
@@ -24,6 +21,30 @@ public class Project {
             }
         }
         System.out.println("project team is full");
+    }
+
+    public String getProjectTitle() {
+        return projectTitle;
+    }
+
+    public void setProjectTitle(String projectTitle) {
+        this.projectTitle = projectTitle;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
+
+    public FreeLancer[] getFreeLancers() {
+        return freeLancers;
+    }
+
+    public void setFreeLancers(FreeLancer[] freeLancers) {
+        this.freeLancers = freeLancers;
     }
 
 }
