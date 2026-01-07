@@ -18,14 +18,6 @@ public class Vehicle {
         setModel(model);
     }
 
-    public void Vehicle() {
-
-    }
-
-    public void Vehicle(String model, char category, String branch) {
-
-    }
-
     public String getModel() {
         return model;
     }
@@ -59,7 +51,7 @@ public class Vehicle {
     }
 
     public double calculateRent() {
-        double cost;
+        double cost = 0;
 
         switch (category) {
             case 'C' -> {
@@ -91,7 +83,7 @@ public class Vehicle {
             }
             //  i should ask for  defult
         }
-        return 0;
+        return cost;
     }
 
     @Override

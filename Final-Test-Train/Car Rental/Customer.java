@@ -10,13 +10,13 @@ public class Customer {
     }
 
     public Customer(int id, String name, int age) {
-        this.id = id;
-        this.name = name;
-        this.age = age;
+        setAge(age);
+        setId(id);
+        setName(name);
     }
 
     public String getCustomerInfo() {
-        return "";
+        return id + "#####" + name + "#####" + age;
     }
 
     public int getId() {
@@ -41,7 +41,8 @@ public class Customer {
         if (name != null && name.length() <= 12 && name.startsWith("S")) {
             this.name = name;
         } else {
-            System.out.println("Invalid name");
+            System.out.println("Invalid name it  must start with S");
+            
         }
 
     }

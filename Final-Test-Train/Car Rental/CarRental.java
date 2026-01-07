@@ -69,6 +69,8 @@ public class CarRental extends Vehicle {
         int age = scanner.nextInt();
 
         Customer newCastomer = new Customer(id, name, age);
+        customers.add(newCastomer);
+        
     }
 
     @Override
