@@ -10,14 +10,17 @@ public class ProgrammingContest extends Contest {
     private ArrayList<Team> teams = new ArrayList<>();
 
     public ProgrammingContest() {
+        super();
         language = "java";
         numofProplem = 3;
     }
 
-    public ProgrammingContest(String language, int numofProplem, String name, char level, String location,  int id, int members) {
+    public ProgrammingContest(String name, char level, String location, String language, int numofProplem, int id, String teamName, int members) {
         super(name, level, location);
         this.language = language;
         this.numofProplem = numofProplem;
+        
+        addTeam(id,teamName,members);
     }
 
     public String getLanguage() {
@@ -39,7 +42,8 @@ public class ProgrammingContest extends Contest {
     public void setNumofProplem(int numofProplem) {
         if (numofProplem >= 3) {
             this.numofProplem = numofProplem;
-
+        }else{
+            this.numofProplem = 3;
         }
     }
 
@@ -52,11 +56,15 @@ public class ProgrammingContest extends Contest {
     }
 
     public void addTeam() {
-        Scanner scanner = new Scanner(System.in);
+Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter Team ID: ");
         int id = scanner.nextInt();
+        System.out.print("Enter Number of Members: ");
         int members = scanner.nextInt();
         scanner.nextLine(); // to not skip name
+        System.out.print("Enter Team Name: ");
         String name = scanner.nextLine();
+        
         addTeam(id, name, members);
     }
 
