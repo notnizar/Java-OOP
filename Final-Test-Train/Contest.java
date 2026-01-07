@@ -31,7 +31,9 @@ public class Contest {
     }
 
     public void setLevel(char level) {  //Ask  for what is entry case
+        Character.toUpperCase(level);
         if (level == 'A' || level == 'B' || level == 'C') {
+            
             this.level = level;
         }
 

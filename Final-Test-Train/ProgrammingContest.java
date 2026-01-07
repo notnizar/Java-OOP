@@ -37,7 +37,10 @@ public class ProgrammingContest extends Contest {
     }
 
     public void setNumofProplem(int numofProplem) {
-        this.numofProplem = numofProplem;
+        if (numofProplem >= 3) {
+            this.numofProplem = numofProplem;
+
+        }
     }
 
     public ArrayList<Team> getTeams() {
@@ -64,13 +67,13 @@ public class ProgrammingContest extends Contest {
 
     @Override
     public double RegFee() {
-        Scanner scanner =   new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Is this a student team? (true or false)");
         boolean isStudent = scanner.nextBoolean();
-        
-        if(isStudent){
-           return super.RegFee() - 10;
-        }else{
+
+        if (isStudent) {
+            return super.RegFee() - 10;
+        } else {
             return 100;
         }
     }
