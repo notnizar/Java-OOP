@@ -14,7 +14,7 @@ public class ProgrammingContest extends Contest {
         numofProplem = 3;
     }
 
-    public ProgrammingContest(String language, int numofProplem, String name, char level, String location) {
+    public ProgrammingContest(String language, int numofProplem, String name, char level, String location,  int id, int members) {
         super(name, level, location);
         this.language = language;
         this.numofProplem = numofProplem;
