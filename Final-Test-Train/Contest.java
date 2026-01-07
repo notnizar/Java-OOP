@@ -13,9 +13,10 @@ public class Contest {
     }
 
     public Contest(String name, char level, String location) {
-        this.name = name;
-        this.level = level;
-        this.location = location;
+        setLevel(level);
+        setLocation(location);
+        setName(name);
+        
     }
 
     public String getName() {

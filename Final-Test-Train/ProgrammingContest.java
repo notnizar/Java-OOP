@@ -17,9 +17,9 @@ public class ProgrammingContest extends Contest {
 
     public ProgrammingContest(String name, char level, String location, String language, int numofProplem, int id, String teamName, int members) {
         super(name, level, location);
-        this.language = language;
-        this.numofProplem = numofProplem;
-        
+        setLanguage(language);
+        setLevel(level);
+        setLocation(location);
         addTeam(id,teamName,members);
     }
 

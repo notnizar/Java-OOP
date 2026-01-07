@@ -13,9 +13,10 @@ public class Team {
     }
 
     public Team(int id, String name, int members) {
-        this.id = id;
-        this.name = name;
-        this.members = members;
+        setId(id);
+        setMembers(members);
+        setName(name);
+
     }
 
     public int getId() {
@@ -39,10 +40,10 @@ public class Team {
     }
 
     public void setName(String name) {
-                
+
         if (name != null && name.toLowerCase().startsWith("a") && name.length() <= 10) {
-           this.name = name;
-        }else{
+            this.name = name;
+        } else {
             System.out.println("Invaild Input");
         }
     }
@@ -52,10 +53,10 @@ public class Team {
     }
 
     public void setMembers(int members) {
-        if(members >= 3 && members <= 5){
-                    this.members = members;
+        if (members >= 3 && members <= 5) {
+            this.members = members;
 
-        }else{
+        } else {
             System.out.println("Invalid input");
         }
     }
