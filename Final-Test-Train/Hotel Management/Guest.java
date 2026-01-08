@@ -10,9 +10,10 @@ public class Guest {
     }
 
     public Guest(int nationalID, String name, int points) {
-        this.nationalID = nationalID;
-        this.name = name;
-        this.points = points;
+         setName(name);
+         setNationalID(nationalID);
+         setPoints(points);
+         
     }
 
     public int getNationalID() {
