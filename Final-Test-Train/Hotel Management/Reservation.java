@@ -70,7 +70,7 @@ public class Reservation {
 
         }
         switch (roomType) {
-            case 'S' -> {
+            case 'F' -> {
                 if (city.equalsIgnoreCase("Amman")) {
                     cost = 100;
                 } else if (city.equalsIgnoreCase("Aqaba")) {
