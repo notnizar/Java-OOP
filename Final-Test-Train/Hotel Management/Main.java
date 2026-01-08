@@ -9,6 +9,8 @@ public class Main {
         HotelStay stay1 = new HotelStay();
         
         fillGuestData(stay1);
+        
+        searchGuestsByPoints(stay1, scanner);
     }
 
     public static void fillGuestData(HotelStay stay1) {
