@@ -1,7 +1,7 @@
 public abstract class ResearchItem {
-    private String  title;
-    private char domain;
-    private double budget;
+    protected String  title;
+    protected char domain;
+    protected double budget;
 
     public ResearchItem(String title, char domain, double budget) {
         setBudget(budget);
@@ -9,13 +9,14 @@ public abstract class ResearchItem {
         setTitle(title);
     }
     
-    abstract public double calculateGrant();
+    public abstract double calculateGrant();
 
     public String getTitle() {
         return title;
     }
 
     public void setTitle(String title) {
+        title = title.toUpperCase();
         this.title = title;
     }
 
@@ -24,7 +25,10 @@ public abstract class ResearchItem {
     }
 
     public void setDomain(char domain) {
-        this.domain = domain;
+        if (domain == 'M' || domain == 'T' || domain == 'E') {
+           this.domain = domain;        
+        }
+        
     }
 
     public double getBudget() {
@@ -34,6 +38,13 @@ public abstract class ResearchItem {
     public void setBudget(double budget) {
         this.budget = budget;
     }
+
+    @Override
+    public String toString() {
+        return "ResearchItem{" + "title=" + title + ", domain=" + domain + ", budget=" + budget + '}';
+    }
+    
+    
     
     
 }
