@@ -1,8 +1,7 @@
-
 package com.mycompany.eventmanagement;
 
-
 public class Speaker {
+
     private int id;
     private String name;
     private int talkCounts;
@@ -11,9 +10,9 @@ public class Speaker {
     }
 
     public Speaker(int id, String name, int talkCounts) {
-        this.id = id;
-        this.name = name;
-        this.talkCounts = talkCounts;
+        setId(id);
+        setName(name);
+        setTalkCounts(talkCounts);
     }
 
     public int getId() {
@@ -21,7 +20,11 @@ public class Speaker {
     }
 
     public void setId(int id) {
-        this.id = id;
+        String idst = Integer.toString(id);
+        if (id > 0 && idst.startsWith("9")) {
+            this.id = id;
+        }
+
     }
 
     public String getName() {
@@ -29,7 +32,10 @@ public class Speaker {
     }
 
     public void setName(String name) {
-        this.name = name;
+        if (name != null && name.length() >= 5 && name.length() <= 15) {
+            this.name = name;
+        }
+
     }
 
     public int getTalkCounts() {
@@ -37,10 +43,12 @@ public class Speaker {
     }
 
     public void setTalkCounts(int talkCounts) {
-        this.talkCounts = talkCounts;
+        if (talkCounts >= 1 && talkCounts <= 10) {
+            this.talkCounts = talkCounts;
+        }
     }
-    
-    public String getSpekDet(){
-        return "";
+
+    public String getSpekDet() {
+        return "ID: " + id + "|" + "Name: " + name + "|" + "Talks: " + talkCounts;
     }
 }
