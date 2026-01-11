@@ -13,9 +13,9 @@ public class Event {
     }
 
     public Event(String title, char category, String city) {
-        this.title = title;
-        this.category = category;
-        this.city = city;
+        setCategory(category);
+        setCity(city);
+        setTitle(title);
     }
 
     public String getTitle() {
