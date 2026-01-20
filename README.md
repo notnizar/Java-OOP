@@ -2,7 +2,7 @@
 
 This repository contains my practice projects for Object-Oriented Programming, focused on moving beyond simple syntax to designing real systems.
 
-## 🚀 Projects & Learning Highlights
+## 🚀 Projects & Learning Highlights 
 
 ### [1. FreelanceFlow (Billing System)](./FreelanceFlow/)
 A system for managing different types of freelancer payments.
